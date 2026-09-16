@@ -37,12 +37,6 @@ require_role('admin', '../access_denied.php', '../login.php');
             <p>View all bookings and approve or reject them.</p>
         </a>
     </div>
-
-    <p class="hint">
-        Note: even if a regular user were to guess this URL
-        (<code>admin/dashboard.php</code>) directly, <code>require_role('admin')</code>
-        blocks them and sends them to the Access Denied page.
-    </p>
 </div>
 </body>
 </html>

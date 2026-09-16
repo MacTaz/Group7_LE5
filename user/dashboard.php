@@ -38,11 +38,6 @@ require_role('user', '../access_denied.php', '../login.php');
         </a>
     </div>
 
-    <p class="hint">
-        Notice there is no "Manage Facilities" or "Manage Bookings" link here —
-        those admin-only buttons are not even rendered for this role, and even if
-        you type <code>../admin/dashboard.php</code> directly, the server blocks it.
-    </p>
 </div>
 </body>
 </html>
