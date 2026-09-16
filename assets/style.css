@@ -4,6 +4,9 @@ body {
     background: #f2f4f7;
     margin: 0;
     color: #222;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 .navbar {
     background: #1f2937;
@@ -13,6 +16,7 @@ body {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    width: 100%;
 }
 .navbar a {
     color: #fff;
@@ -23,16 +27,18 @@ body {
 .navbar a:hover { text-decoration: underline; }
 
 .container {
+    width: 92%;
     max-width: 800px;
-    margin: 30px auto;
+    margin: auto;
     background: #fff;
     padding: 24px 30px;
     border-radius: 8px;
     box-shadow: 0 1px 4px rgba(0,0,0,0.1);
 }
 .auth-box {
+    width: 92%;
     max-width: 380px;
-    margin: 60px auto;
+    margin: auto;
     background: #fff;
     padding: 30px;
     border-radius: 8px;
