@@ -1,5 +1,6 @@
 <?php
 // ============================================================
+// Programmer Names: Agatha Fei Pelayo, Ma Irene Adel, Mari Alessandrae Rosero, Mico Angelo Tazarte
 // VALIDATION + SIMPLE JSON "DATABASE" HELPERS
 // ============================================================
 

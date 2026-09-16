@@ -1,5 +1,6 @@
 <?php
 // ============================================================
+// Programmer Names: Agatha Fei Pelayo, Ma Irene Adel, Mari Alessandrae Rosero, Mico Angelo Tazarte
 // DEMO ACCOUNTS
 // For a real system these would be rows in a database table,
 // with the password_hash column already stored. Here we hash

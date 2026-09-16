@@ -1,5 +1,6 @@
 <?php
 // ============================================================
+// Programmer Names: Agatha Fei Pelayo, Ma Irene Adel, Mari Alessandrae Rosero, Mico Angelo Tazarte
 // AUTH / SESSION GUARD FUNCTIONS
 // Every protected page must call require_login() or
 // require_role() at the very top, BEFORE any HTML is echoed.

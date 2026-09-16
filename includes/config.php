@@ -1,5 +1,6 @@
 <?php
 // ============================================================
+// Programmer Names: Agatha Fei Pelayo, Ma Irene Adel, Mari Alessandrae Rosero, Mico Angelo Tazarte
 // GLOBAL CONFIG
 // Starts the PHP session and defines settings used everywhere.
 // ============================================================
