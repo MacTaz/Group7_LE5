@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['booking_id'], $_POST[
 </head>
 <body>
 <nav class="navbar">
-    <span>⚙️ Admin Panel — <?= htmlspecialchars($_SESSION['name']) ?></span>
+    <span> Admin Panel — <?= htmlspecialchars($_SESSION['name']) ?></span>
     <div>
         <a href="dashboard.php">Dashboard</a>
         <a href="manage_facilities.php">Manage Facilities</a>

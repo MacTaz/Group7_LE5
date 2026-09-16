@@ -14,7 +14,7 @@ require_role('user', '../access_denied.php', '../login.php');
 </head>
 <body>
 <nav class="navbar">
-    <span>🏟️ Sports Facility Booking — <?= htmlspecialchars($_SESSION['name']) ?></span>
+    <span> Sports Facility Booking — <?= htmlspecialchars($_SESSION['name']) ?></span>
     <div>
         <a href="dashboard.php">Dashboard</a>
         <a href="book_facility.php">Book a Facility</a>
