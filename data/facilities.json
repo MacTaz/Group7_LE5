@@ -1,0 +1,6 @@
+[
+    { "id": 1, "name": "Basketball Court", "capacity": 20, "rate_per_hour": 500 },
+    { "id": 2, "name": "Volleyball Court", "capacity": 16, "rate_per_hour": 350 },
+    { "id": 3, "name": "Swimming Pool", "capacity": 30, "rate_per_hour": 800 },
+    { "id": 4, "name": "Tennis Court", "capacity": 4, "rate_per_hour": 400 }
+]
