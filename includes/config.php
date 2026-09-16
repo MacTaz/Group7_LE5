@@ -16,5 +16,5 @@ define('SESSION_TIMEOUT', 15 * 60); // 15 minutes, in seconds
 define('MAX_LOGIN_ATTEMPTS', 3);
 define('LOCKOUT_TIME', 60); // seconds to wait after too many failed tries
 
-// Where our "database" json files live
+// Where our "database" xml files live
 define('DATA_DIR', __DIR__ . '/../data/');

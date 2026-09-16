@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<facilities>
+    <facility>
+        <id>1</id>
+        <name>Basketball Court</name>
+        <capacity>20</capacity>
+        <rate_per_hour>500</rate_per_hour>
+    </facility>
+    <facility>
+        <id>2</id>
+        <name>Volleyball Court</name>
+        <capacity>16</capacity>
+        <rate_per_hour>350</rate_per_hour>
+    </facility>
+    <facility>
+        <id>3</id>
+        <name>Swimming Pool</name>
+        <capacity>30</capacity>
+        <rate_per_hour>800</rate_per_hour>
+    </facility>
+    <facility>
+        <id>4</id>
+        <name>Tennis Court</name>
+        <capacity>4</capacity>
+        <rate_per_hour>400</rate_per_hour>
+    </facility>
+</facilities>

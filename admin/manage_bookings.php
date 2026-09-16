@@ -5,8 +5,8 @@ require_once '../includes/functions.php';
 
 require_role('admin', '../access_denied.php', '../login.php');
 
-$bookings_file = DATA_DIR . 'bookings.json';
-$bookings = read_json($bookings_file);
+$bookings_file = DATA_DIR . 'bookings.xml';
+$bookings = read_xml($bookings_file);
 
 // Handle approve / reject actions
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['booking_id'], $_POST['action'])) {
@@ -14,13 +14,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['booking_id'], $_POST[
     $action = $_POST['action'] === 'approve' ? 'approved' : 'rejected';
 
     foreach ($bookings as &$b) {
-        if ($b['id'] === $id) {
+        if ((int)$b['id'] === $id) {
             $b['status'] = $action;
             break;
         }
     }
     unset($b);
-    write_json($bookings_file, $bookings);
+    write_xml($bookings_file, $bookings);
 }
 ?>
 <!DOCTYPE html>

@@ -5,9 +5,9 @@ require_once '../includes/functions.php';
 
 require_role('user', '../access_denied.php', '../login.php');
 
-$facilities_file = DATA_DIR . 'facilities.json';
-$bookings_file   = DATA_DIR . 'bookings.json';
-$facilities      = read_json($facilities_file);
+$facilities_file = DATA_DIR . 'facilities.xml';
+$bookings_file   = DATA_DIR . 'bookings.xml';
+$facilities      = read_xml($facilities_file);
 $facility_names  = array_column($facilities, 'name');
 
 // Fixed list so a user can't submit an arbitrary time string
@@ -86,7 +86,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     if (empty($errors)) {
-        $bookings = read_json($bookings_file);
+        $bookings = read_xml($bookings_file);
         $new_id = count($bookings) ? max(array_column($bookings, 'id')) + 1 : 1;
 
         $bookings[] = [
@@ -103,7 +103,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'created_at'   => date('Y-m-d H:i:s'),
         ];
 
-        write_json($bookings_file, $bookings);
+        write_xml($bookings_file, $bookings);
         $success = 'Booking submitted! It is now pending admin approval.';
 
         // Clear the form after a successful submit

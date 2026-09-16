@@ -5,7 +5,7 @@ require_once '../includes/functions.php';
 
 require_role('user', '../access_denied.php', '../login.php');
 
-$bookings = read_json(DATA_DIR . 'bookings.json');
+$bookings = read_xml(DATA_DIR . 'bookings.xml');
 
 // ----- Users can only see their OWN transactions, not everyone's -----
 $my_bookings = array_filter($bookings, function ($b) {

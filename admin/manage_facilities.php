@@ -5,8 +5,8 @@ require_once '../includes/functions.php';
 
 require_role('admin', '../access_denied.php', '../login.php');
 
-$facilities_file = DATA_DIR . 'facilities.json';
-$facilities = read_json($facilities_file);
+$facilities_file = DATA_DIR . 'facilities.xml';
+$facilities = read_xml($facilities_file);
 
 $errors = [];
 $success = '';
@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'capacity'      => (int)$capacity,
             'rate_per_hour' => (float)$rate,
         ];
-        write_json($facilities_file, $facilities);
+        write_xml($facilities_file, $facilities);
         $success = 'Facility added successfully.';
     }
 }

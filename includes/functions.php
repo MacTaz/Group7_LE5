@@ -48,7 +48,58 @@ function validate_date_not_future($date) {
     return $date <= date('Y-m-d'); // today or earlier = OK
 }
 
-// ----- Simple JSON "database" read/write -----
+// ----- Simple XML "database" read/write -----
+function read_xml($file) {
+    if (!file_exists($file)) return [];
+    libxml_use_internal_errors(true);
+    $xml = simplexml_load_file($file, 'SimpleXMLElement', LIBXML_NOCDATA);
+    if ($xml === false) return [];
+
+    $list = [];
+    foreach ($xml->children() as $child) {
+        $item = [];
+        foreach ($child->children() as $key => $val) {
+            $item[$key] = (string)$val;
+        }
+        if (empty($item)) {
+            $item = (array)$child;
+        }
+        $list[] = $item;
+    }
+    return $list;
+}
+
+function write_xml($file, $data, $rootName = null, $itemName = null) {
+    if ($rootName === null) {
+        $base = basename($file, '.xml');
+        if ($base === 'facilities') {
+            $rootName = 'facilities';
+            $itemName = 'facility';
+        } elseif ($base === 'bookings') {
+            $rootName = 'bookings';
+            $itemName = 'booking';
+        } else {
+            $rootName = 'items';
+            $itemName = 'item';
+        }
+    }
+
+    $xml = new SimpleXMLElement("<?xml version=\"1.0\" encoding=\"UTF-8\"?><{$rootName}/>");
+    foreach ($data as $item) {
+        $node = $xml->addChild($itemName);
+        foreach ($item as $key => $val) {
+            $node->addChild($key, htmlspecialchars((string)$val, ENT_XML1, 'UTF-8'));
+        }
+    }
+
+    $dom = new DOMDocument('1.0', 'UTF-8');
+    $dom->preserveWhiteSpace = false;
+    $dom->formatOutput = true;
+    $dom->loadXML($xml->asXML());
+    $dom->save($file);
+}
+
+// ----- Backward compatibility JSON helpers -----
 function read_json($file) {
     if (!file_exists($file)) return [];
     $content = file_get_contents($file);
@@ -59,3 +110,4 @@ function read_json($file) {
 function write_json($file, $data) {
     file_put_contents($file, json_encode($data, JSON_PRETTY_PRINT), LOCK_EX);
 }
+
