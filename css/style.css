@@ -1,0 +1,282 @@
+/* ------------------------------------------------------------
+   Sports Facility Booking System - Stylesheet
+   ------------------------------------------------------------ */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #0f2027;
+    background: linear-gradient(135deg, #1b2a4a 0%, #16324f 50%, #0e4166 100%);
+    min-height: 100vh;
+    margin: 0;
+    color: #1b1b1b;
+}
+
+.navbar {
+    background: #0b3d91;
+    color: #fff;
+    padding: 14px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.navbar .brand {
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: .5px;
+}
+
+.navbar nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 18px;
+    font-size: .95rem;
+    opacity: .9;
+}
+
+.navbar nav a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+.navbar .role-badge {
+    background: #ffb703;
+    color: #1b1b1b;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: .75rem;
+    font-weight: 700;
+    margin-left: 10px;
+}
+
+.container {
+    max-width: 960px;
+    margin: 40px auto;
+    padding: 0 16px;
+}
+
+.card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 28px 32px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.25);
+}
+
+.login-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.login-card {
+    background: #fff;
+    width: 100%;
+    max-width: 380px;
+    padding: 32px;
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0,0,0,.35);
+}
+
+.login-card h1 {
+    font-size: 1.4rem;
+    margin-bottom: 4px;
+    color: #0b3d91;
+}
+
+.login-card .subtitle {
+    color: #666;
+    font-size: .9rem;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-size: .85rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+    margin-top: 14px;
+    color: #333;
+}
+
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=number],
+input[type=date],
+select,
+textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #cfd8e3;
+    border-radius: 6px;
+    font-size: .95rem;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #0b3d91;
+    box-shadow: 0 0 0 3px rgba(11,61,145,.15);
+}
+
+.checkbox-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 14px;
+    font-size: .9rem;
+}
+
+.checkbox-row input {
+    width: auto;
+}
+
+button, .btn {
+    display: inline-block;
+    background: #0b3d91;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: .95rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    margin-top: 18px;
+}
+
+button:hover, .btn:hover {
+    background: #0a2f70;
+}
+
+.btn-danger {
+    background: #c1121f;
+}
+.btn-danger:hover {
+    background: #970d18;
+}
+
+.btn-secondary {
+    background: #6c757d;
+}
+.btn-secondary:hover {
+    background: #565e64;
+}
+
+.alert {
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-size: .88rem;
+    margin-bottom: 12px;
+}
+
+.alert-error {
+    background: #fde2e1;
+    color: #9c1a1a;
+    border: 1px solid #f5b5b3;
+}
+
+.alert-success {
+    background: #e1f7e6;
+    color: #1a7a34;
+    border: 1px solid #b6e6c1;
+}
+
+.alert-info {
+    background: #e6f0fb;
+    color: #0b3d91;
+    border: 1px solid #b9d3f2;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 16px;
+    font-size: .9rem;
+}
+
+th, td {
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+th {
+    background: #f4f6fa;
+    color: #0b3d91;
+}
+
+.field-error {
+    color: #c1121f;
+    font-size: .8rem;
+    margin-top: 4px;
+}
+
+.status-pill {
+    padding: 2px 10px;
+    border-radius: 10px;
+    font-size: .75rem;
+    font-weight: 700;
+}
+
+.status-confirmed {
+    background: #e1f7e6;
+    color: #1a7a34;
+}
+
+.dash-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin: 20px 0;
+}
+
+.stat-box {
+    background: #f4f6fa;
+    border-radius: 8px;
+    padding: 18px;
+    text-align: center;
+}
+
+.stat-box .num {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #0b3d91;
+}
+
+.stat-box .label {
+    font-size: .8rem;
+    color: #555;
+    margin-top: 4px;
+}
+
+.denied-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.denied-card {
+    background: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    text-align: center;
+    max-width: 420px;
+    box-shadow: 0 15px 40px rgba(0,0,0,.35);
+}
+
+.denied-card .icon {
+    font-size: 3rem;
+}
+
+.small-note {
+    font-size: .78rem;
+    color: #888;
+    margin-top: 24px;
+    text-align: center;
+}

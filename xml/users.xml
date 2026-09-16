@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<users>
+    <user>
+        <username>DOOM1</username>
+        <password>$2y$10$fytspgWqLwZuAsT736i7i.Or/VRkefUbnObSwYsrthLv.1Esh3YKO</password>
+        <role>admin</role>
+        <fullname>DOOM1</fullname>
+    </user>
+    <user>
+        <username>Agathahaha</username>
+        <password>$2y$10$7cyjUNlEMq4w77Z7QH4BkOgL0HUYjjpnXcPlNEVX3sGg/aELuPOka</password>
+        <role>user</role>
+        <fullname>Agathahaha</fullname>
+    </user>
+</users>
