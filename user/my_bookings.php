@@ -21,7 +21,7 @@ $my_bookings = array_filter($bookings, function ($b) {
 </head>
 <body>
 <nav class="navbar">
-    <span>🏟️ Sports Facility Booking — <?= htmlspecialchars($_SESSION['name']) ?></span>
+    <span>Sports Facility Booking — <?= htmlspecialchars($_SESSION['name']) ?></span>
     <div>
         <a href="dashboard.php">Dashboard</a>
         <a href="book_facility.php">Book a Facility</a>
