@@ -67,7 +67,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </nav>
 
 <div class="container">
-    <h1>Manage Facilities</h1>
+    <div class="page-header">
+        <h1>Manage Facilities</h1>
+        <span class="timeout-badge" id="sessionBadge">
+            Session limit: <strong id="sessionTimer" data-seconds="<?= (int)SESSION_TIMEOUT ?>" data-redirect="../login.php?expired=1">15:00</strong>
+        </span>
+    </div>
 
     <?php foreach ($errors as $e): ?>
         <div class="alert alert-error"><?= htmlspecialchars($e) ?></div>
@@ -101,5 +106,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <?php endforeach; ?>
     </table>
 </div>
+<script src="../assets/timer.js"></script>
 </body>
 </html>

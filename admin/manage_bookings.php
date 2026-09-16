@@ -42,7 +42,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['booking_id'], $_POST[
 </nav>
 
 <div class="container">
-    <h1>All Bookings</h1>
+    <div class="page-header">
+        <h1>All Bookings</h1>
+        <span class="timeout-badge" id="sessionBadge">
+            Session limit: <strong id="sessionTimer" data-seconds="<?= (int)SESSION_TIMEOUT ?>" data-redirect="../login.php?expired=1">15:00</strong>
+        </span>
+    </div>
     <table>
         <tr>
             <th>ID</th><th>User</th><th>Facility</th><th>Date</th><th>Time</th>
@@ -75,5 +80,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['booking_id'], $_POST[
         <?php endforeach; ?>
     </table>
 </div>
+<script src="../assets/timer.js"></script>
 </body>
 </html>

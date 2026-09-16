@@ -24,7 +24,12 @@ require_role('admin', '../access_denied.php', '../login.php');
 </nav>
 
 <div class="container">
-    <h1>Admin Dashboard</h1>
+    <div class="page-header">
+        <h1>Admin Dashboard</h1>
+        <span class="timeout-badge" id="sessionBadge">
+            Session limit: <strong id="sessionTimer" data-seconds="<?= (int)SESSION_TIMEOUT ?>" data-redirect="../login.php?expired=1">15:00</strong>
+        </span>
+    </div>
     <p>Welcome, <?= htmlspecialchars($_SESSION['name']) ?>! From here you can manage facilities and review bookings.</p>
 
     <div class="card-grid">
@@ -38,5 +43,6 @@ require_role('admin', '../access_denied.php', '../login.php');
         </a>
     </div>
 </div>
+<script src="../assets/timer.js"></script>
 </body>
 </html>

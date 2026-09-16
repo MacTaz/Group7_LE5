@@ -31,7 +31,12 @@ $my_bookings = array_filter($bookings, function ($b) {
 </nav>
 
 <div class="container">
-    <h1>My Bookings</h1>
+    <div class="page-header">
+        <h1>My Bookings</h1>
+        <span class="timeout-badge" id="sessionBadge">
+            Session limit: <strong id="sessionTimer" data-seconds="<?= (int)SESSION_TIMEOUT ?>" data-redirect="../login.php?expired=1">15:00</strong>
+        </span>
+    </div>
     <table>
         <tr><th>Facility</th><th>Date</th><th>Time</th><th>Participants</th><th>Status</th></tr>
         <?php if (empty($my_bookings)): ?>
@@ -48,5 +53,6 @@ $my_bookings = array_filter($bookings, function ($b) {
         <?php endforeach; ?>
     </table>
 </div>
+<script src="../assets/timer.js"></script>
 </body>
 </html>
