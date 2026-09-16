@@ -22,13 +22,12 @@ if (isset($_GET['expired'])) {
 // ----- Security Feature 5: Cookie (non-sensitive convenience only) -----
 $remembered_username = $_COOKIE['remember_username'] ?? '';
 
-// ----- Security Feature: Max login attempts / lockout -----
-if (!isset($_SESSION['login_attempts'])) $_SESSION['login_attempts'] = 0;
-if (!isset($_SESSION['lockout_until']))  $_SESSION['lockout_until']  = 0;
+// ----- Security Feature: Max login attempts / lockout (temporarily disabled) -----
+$_SESSION['login_attempts'] = 0;
+$_SESSION['lockout_until']  = 0;
+$locked_out = false;
 
-$locked_out = time() < $_SESSION['lockout_until'];
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && !$locked_out) {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $username = sanitize_string($_POST['username'] ?? '');
     $password = $_POST['password'] ?? ''; // raw password is only used for verifying, never echoed
@@ -60,18 +59,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !$locked_out) {
         } else {
             // Generic message only — never say whether username or password was wrong
             $error = 'Invalid username or password.';
-            $_SESSION['login_attempts']++;
-
-            if ($_SESSION['login_attempts'] >= MAX_LOGIN_ATTEMPTS) {
-                $_SESSION['lockout_until']  = time() + LOCKOUT_TIME;
-                $_SESSION['login_attempts'] = 0;
-            }
+            // Lockout disabled momentarily
         }
     }
-}
-
-if ($locked_out) {
-    $error = 'Too many failed login attempts. Please wait a moment before trying again.';
 }
 ?>
 <!DOCTYPE html>

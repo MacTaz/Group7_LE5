@@ -30,4 +30,10 @@
     <capacity>10</capacity>
     <rate_per_hour>200</rate_per_hour>
   </facility>
+  <facility>
+    <id>6</id>
+    <name>test</name>
+    <capacity>200</capacity>
+    <rate_per_hour>300</rate_per_hour>
+  </facility>
 </facilities>
